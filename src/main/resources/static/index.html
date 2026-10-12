@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BugRadar | Test Risk Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand"><span class="brand-icon">B</span> BugRadar</div>
+        <span class="subtitle">Software Quality Intelligence</span>
+    </header>
+
+    <main class="container">
+        <section class="welcome">
+            <div>
+                <p class="eyebrow">QUALITY ASSURANCE CENTER</p>
+                <h1>Test Risk Dashboard</h1>
+                <p class="muted">Identify risky modules and prioritize your testing effort.</p>
+            </div>
+            <button class="refresh-btn" onclick="loadModules()">↻ Refresh</button>
+        </section>
+
+        <section class="stats">
+            <div class="stat-card">
+                <p>Total Modules</p>
+                <h2 id="totalCount">0</h2>
+            </div>
+            <div class="stat-card high-card">
+                <p>High Risk</p>
+                <h2 id="highCount">0</h2>
+            </div>
+            <div class="stat-card medium-card">
+                <p>Medium Risk</p>
+                <h2 id="mediumCount">0</h2>
+            </div>
+            <div class="stat-card low-card">
+                <p>Low Risk</p>
+                <h2 id="lowCount">0</h2>
+            </div>
+        </section>
+
+        <section class="content-grid">
+            <div class="panel">
+                <h2>Add Software Module</h2>
+                <p class="muted">Enter module details to calculate its testing risk.</p>
+
+                <form id="moduleForm">
+                    <label for="moduleName">Module Name</label>
+                    <input id="moduleName" type="text"
+                           placeholder="e.g. Payment Module" required>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="previousDefects">Previous Defects (0–10)</label>
+                            <input id="previousDefects" type="number"
+                                   min="0" max="10" value="0" required>
+                        </div>
+                        <div>
+                            <label for="testFailures">Test Failures (0–10)</label>
+                            <input id="testFailures" type="number"
+                                   min="0" max="10" value="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div>
+                            <label for="complexity">Complexity (1–5)</label>
+                            <select id="complexity" required>
+                                <option value="1">1 - Very Low</option>
+                                <option value="2">2 - Low</option>
+                                <option value="3" selected>3 - Medium</option>
+                                <option value="4">4 - High</option>
+                                <option value="5">5 - Very High</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="businessImpact">Business Impact (1–5)</label>
+                            <select id="businessImpact" required>
+                                <option value="1">1 - Very Low</option>
+                                <option value="2">2 - Low</option>
+                                <option value="3" selected>3 - Medium</option>
+                                <option value="4">4 - High</option>
+                                <option value="5">5 - Very High</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="primary-btn" type="submit">
+                        Calculate Risk & Add Module
+                    </button>
+                    <p id="formMessage" role="status"></p>
+                </form>
+            </div>
+
+            <div class="panel">
+                <div class="table-heading">
+                    <div>
+                        <h2>Module Risk Register</h2>
+                        <p class="muted">Highest-risk modules appear first.</p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Module</th>
+                                <th>Score</th>
+                                <th>Risk</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="moduleTable">
+                            <tr>
+                                <td colspan="4">Loading modules...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            BugRadar · Risk-based testing prioritization · Academic project
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
