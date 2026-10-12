@@ -40,30 +40,55 @@ The application provides a dashboard for analyzing software risks based on modul
 
 bugradar/
 ├── .mvn/
+
 ├── src/
+
 │   ├── main/
+
 │   │   ├── java/com/bugradar/
+
 │   │   │   ├── BugradarApplication.java
+
 │   │   │   ├── controller/
+
 │   │   │   │   └── SoftwareModuleController.java
+
 │   │   │   ├── model/
+
 │   │   │   │   └── SoftwareModule.java
+
 │   │   │   ├── repository/
+
 │   │   │   │   └── SoftwareModuleRepository.java
+
 │   │   │   └── service/
+
 │   │   │       └── RiskCalculationService.java
+
 │   │   ├── resources/
+
 │   │   │   ├── application.properties
+
 │   │   │   └── static/
+
 │   │   │       ├── index.html
+
 │   │   │       ├── script.js
+
 │   │   │       └── style.css
+
 │   └── test/
+
 │       └── java/com/bugradar/
+
 │           └── BugradarApplicationTests.java
+
 ├── mvnw
+
 ├── mvnw.cmd
+
 ├── pom.xml
+
 └── README.md
 
 
