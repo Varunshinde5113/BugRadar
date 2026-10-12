@@ -116,3 +116,7 @@ BugRadar demonstrates how software risk assessment can support STQA activities, 
 ---
 
 *BugRadar aims to make software risk assessment more organized, understandable, and useful for prioritizing testing activities.*
+
+
+<img width="1887" height="955" alt="image" src="https://github.com/user-attachments/assets/fa7c4cc1-eb37-4829-8671-e089d17fae18" />
+
